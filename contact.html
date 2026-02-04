@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Contact - Krishna Sales And Service</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="krishna sales and service logo.png">
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+        crossorigin="anonymous">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        crossorigin="anonymous">
+
+    <!-- Google Font -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+        }
+
+        /* Preloader */
+        #preloader {
+            background: #ffffff url(loading.gif) no-repeat center center;
+            background-size: 20%;
+            height: 100vh;
+            width: 100%;
+            position: fixed;
+            z-index: 999;
+        }
+
+        .nav-link {
+            color: black !important;
+        }
+
+        .nav-link:hover {
+            color: #004a99 !important;
+        }
+
+        /* Contact Section */
+        .contact-wrapper {
+            padding: 30px 15px;
+        }
+
+        .contact-left h5 {
+            font-weight: 600;
+            margin-bottom: 25px;
+        }
+
+        .contact-right {
+            background-color: #f8f9fa;
+            padding: 40px;
+            height: 100%;
+        }
+
+        .contact-right h2 {
+            font-weight: 600;
+            margin-bottom: 25px;
+            text-transform: capitalize;
+        }
+
+        .contact-right p {
+            margin-bottom: 15px;
+        }
+
+        /* Map */
+        .map-container {
+            width: 100%;
+            height: 450px;
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+        
+        /* Back to Top Button */
+        #backToTop {
+            position: fixed;
+            bottom: 50px;
+            right: 25px;
+            z-index: 999;
+            background-color: #004a99;
+            color: white;
+            border: none;
+            padding: 10px 14px;
+            border-radius: 50%;
+            font-size: 18px;
+            cursor: pointer;
+            display: none;
+            transition: all 0.3s ease;
+        }
+
+        #backToTop:hover {
+            background-color: #002f66;
+            transform: translateY(-3px);
+        }
+
+        footer p {
+            text-align: center;
+            background-color: #fff8b5;
+            padding: 12px;
+            font-size: 0.9rem;
+            margin: 0;
+        }
+
+        @media (max-width: 768px) {
+            .contact-right {
+                padding: 30px 20px;
+            }
+        }
+    </style>
+
+    <!-- Form Validation -->
+    <script>
+        function validateform() {
+            var femail = document.myform.femail.value;
+            var atposition = femail.indexOf("@");
+            var dotposition = femail.lastIndexOf(".");
+            var fmno = document.myform.fmno.value;
+            var fcomplaint = document.myform.fcomplaint.value;
+
+            if (atposition < 1 || dotposition < atposition + 2 || dotposition + 2 >= femail.length) {
+                alert("Please enter a valid email address");
+                return false;
+            } else if (fmno.length != 10) {
+                alert("Mobile number should be of 10 digits!");
+                return false;
+            } else if (fcomplaint == "") {
+                alert("Comment can't be blank");
+                return false;
+            }
+        }
+    </script>
+</head>
+
+<body>
+
+    <div id="preloader"></div>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #fff8b5;">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html">
+                <img src="krishna sales and service logo.png" alt="Krishna Sales And Service Logo" style="height:50px;">
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About us</a></li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Media</a>
+                        <ul class="dropdown-menu" style="background-color:#fff8b5;">
+                            <li><a class="dropdown-item" href="gallery.html">Gallery</a></li>
+                            <li><a class="dropdown-item" href="video.html">Video</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item"><a class="nav-link" href="service.html">Service</a></li>
+                    <li class="nav-item"><a class="nav-link" href="certificate.html">Certificate</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Contact Section -->
+    <section class="contact-wrapper">
+        <div class="container">
+            <div class="row g-4">
+
+                <!-- Contact Form Detail -->
+                <div class="col-lg-6">
+                    <div class="contact-left">
+                        <h5>HAVE A QUESTION OR COMMENT?</h5>
+
+                        <p class="mb-4">
+                            Click the Button below to Fill out Our Contact Form.  
+                            We’ll get Back to you as Soon as possible.
+                        </p>
+
+                        <a href="https://form.svhrt.com/64f7ef636365851c10fc349b"
+                        target="_blank"
+                        class="btn btn-dark px-5 py-2">
+                            FILL CONTACT FORM
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Contact Info -->
+                <div class="col-lg-6">
+                    <div class="contact-right">
+                        <h2>Get in Touch</h2>
+
+                        <p>
+                            <a href="https://www.instagram.com/krishna_sales_service/"
+                            target="_blank"
+                            style="text-decoration:none; color:inherit;">
+                                <strong>Bipin Parmar</strong>
+                            </a>
+                            -<br>
+                            Founder of Krishna Sales And Service
+                        </p>
+
+                        <p><strong>CALL US:</strong>
+							 <a href="tel:+919825317045" style="text-decoration:none; color:inherit;">
+								+91 98253 17045
+							</a>
+						</p>
+
+                        <p><strong>Whatsapp:</strong>
+                            <a href="https://wa.me/919825317045"
+                            target="_blank"
+                            style="text-decoration:none; color:inherit;">
+                                +91 98253 17045
+                            </a>
+                        </p>
+
+                        <p>
+							<strong>ADDRESS:</strong><br>
+							<a href="https://share.google/4Cx62aBVdklZ46J52"
+							target="_blank"
+							style="text-decoration:none; color:inherit;">
+								Shilpa Park Society,<br>
+								Green Park Society, Varachha,<br>
+								Surat, Gujarat 395006
+							</a>
+						</p>
+
+                        <p class="mt-4">
+                            <strong>Opening Hours:</strong><br>
+                            MON to SAT: 08:00 AM – 08:00 PM<br>
+                            SUN: 08:00 AM – 12:00 PM
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Map -->
+    <div class="map-container">
+        <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3719.7064248084644!2d72.8503408!3d21.2038182!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be04f0044480a91%3A0xf86e54c8262190af!2sKrishna%20Sales%20%26%20Service!5e0!3m2!1sen!2sin"
+            loading="lazy"></iframe>
+    </div>
+
+    <!-- Back to Top Button -->
+    <button id="backToTop" title="Go to top">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
+    <!-- Footer -->
+    <footer>
+        <p>
+            &copy; 2026
+            <a href="https://himanshudev.infy.uk/" style="color:black;text-decoration:none;">
+                Himanshu Parmar
+            </a>
+        </p>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        var loader = document.getElementById("preloader");
+        window.addEventListener("load", function () {
+            loader.style.display = "none";
+        });
+
+        // Back to Top Button
+        const backToTop = document.getElementById("backToTop");
+
+        window.addEventListener("scroll", () => {
+            if (window.scrollY > 300) {
+                backToTop.style.display = "block";
+            } else {
+                backToTop.style.display = "none";
+            }
+        });
+
+        backToTop.addEventListener("click", () => {
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+        });
+    </script>
+
+</body>
+</html>

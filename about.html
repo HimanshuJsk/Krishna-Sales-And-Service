@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About us - Krishna Sales And Service</title>
+    <link rel="icon" type="image/png" href="krishna sales and service logo.png">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        #preloader {
+            background: #ffffff url(loading.gif) no-repeat center center;
+            background-size: 20%;
+            height: 100vh;
+            width: 100%;
+            position: fixed;
+            z-index: 100;
+        }
+
+        .nav-link {
+            color: black !important;
+        }
+
+        .nav-link:hover {
+            text-decoration: none;
+            color: #004a99 !important;
+        }
+
+        .hero-about {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+                url('about-background-image.jpg') center/cover no-repeat;
+            color: white;
+            text-align: center;
+            padding: 80px 20px;
+        }
+
+        .hero-about h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .hero-about p {
+            max-width: 700px;
+            margin: 0 auto 20px auto;
+            font-size: 1rem;
+            line-height: 1.5;
+        }
+
+        .breadcrumb-box {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.15);
+            padding: 10px 25px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+        }
+
+        .breadcrumb-box a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .stats-section {
+            position: relative;
+            overflow: hidden;
+            background-color: #004a99;
+            padding: 60px 20px;
+        }
+
+        .overview-section h2 {
+            color: #0d2e56;
+        }
+
+        #stats-video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            z-index: 1;
+            transform: translate(-50%, -50%);
+            opacity: 0.3;
+            object-fit: cover;
+        }
+
+        .stat-box {
+            position: relative;
+            padding: 30px 15px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(5px);
+            border-radius: 5px;
+            color: white;
+            text-align: center;
+        }
+
+        .partner-section {
+            background-color: #f8fbff;
+            background-image: radial-gradient(#d1e3f8 1px, transparent 1px);
+            background-size: 20px 20px;
+            padding: 30px 20px;
+        }
+
+        .partner-content h2 {
+            color: #1a4d8c;
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .partner-content p {
+            color: #444;
+            font-size: 1rem;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .partner-logo-container img {
+            max-width: 70%;
+            height: auto;
+            transition: transform 0.3s ease;
+        }
+
+        .partner-logo-container img:hover {
+            transform: scale(1.05);
+        }
+
+        .btn-partner {
+            background-color: #1a4d8c;
+            color: white;
+            padding: 10px 25px;
+            font-size: 1rem;
+            font-weight: 500;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-partner:hover {
+            background-color: #0d2e56;
+            color: white;
+        }
+
+        /* Back to Top Button */
+        #backToTop {
+            position: fixed;
+            bottom: 50px;
+            right: 25px;
+            z-index: 999;
+            background-color: #004a99;
+            color: white;
+            border: none;
+            padding: 10px 14px;
+            border-radius: 50%;
+            font-size: 18px;
+            cursor: pointer;
+            display: none;
+            transition: all 0.3s ease;
+        }
+
+        #backToTop:hover {
+            background-color: #002f66;
+            transform: translateY(-3px);
+        }
+
+        footer p {
+            text-align: center;
+            background-color: #fff8b5;
+            padding: 12px;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .hero-about h1 {
+                font-size: 2rem;
+            }
+
+            .hero-about p {
+                font-size: 0.95rem;
+            }
+
+            .partner-content h2 {
+                font-size: 1.6rem;
+            }
+
+            .partner-content p {
+                font-size: 0.95rem;
+            }
+
+            .stat-number {
+                font-size: 2rem !important;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero-about {
+                padding: 60px 15px;
+            }
+
+            .hero-about h1 {
+                font-size: 1.8rem;
+            }
+
+            .hero-about p {
+                font-size: 0.9rem;
+            }
+
+            .partner-content h2 {
+                font-size: 1.4rem;
+            }
+
+            .partner-content p {
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="preloader"></div>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #fff8b5;">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html">
+                <img src="krishna sales and service logo.png" alt="Krishna Sales And Service Logo" style="height: 50px;">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="about.html">About us</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">Media</a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown" style="background-color: #fff8b5;">
+                            <li><a class="dropdown-item" href="gallery.html">Gallery</a></li>
+                            <li><a class="dropdown-item" href="video.html">Video</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="service.html">Service</a></li>
+                    <li class="nav-item"><a class="nav-link" href="certificate.html">Certificate</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-about">
+        <div class="container">
+            <h1>About Us</h1>
+            <p>
+                Krishna Sales and Service stands as a leader in quality and reliability, delivering expert RO Water
+                Purifier and Home Appliance solutions with a commitment to excellence. With over 27 years of expertise
+                and a customer - centric mindset, we cater to every household need, ensuring pure water, seamless service,
+                and high standards of trust. At Krishna, we don't just provide products — we build health, efficiency, and
+                a worry - free home.
+            </p>
+            <div class="breadcrumb-box">
+                <a href="index.html">HOME</a> &nbsp; → &nbsp; ABOUT US
+            </div>
+        </div>
+    </section>
+
+    <!-- Overview Section -->
+    <div class="container my-4 overview-section">
+        <div class="row align-items-center">
+            <div class="col-md-6 mb-4">
+                <h1 class="fw-bold">Overview of the Shop</h2>
+                <h2 class="text-primary fw-bold">
+                    <a href="https://www.instagram.com/krishna_sales_service" 
+                    target="_blank" 
+                    style="text-decoration: none; color: inherit;">
+                        Welcome to Krishna Sales & Service
+                    </a>
+                </h2>
+                <h5 class="text-info fw-semibold mb-3">Innovating Water Purification Solutions Globally</h5>
+                <p class="text-secondary">
+                    <b>With over 27 years of expertise</b>, Krishna Sales and Service is Surat’s trusted provider of RO
+                    Water Purifiers, Gas geysers, and Domestic Gharghanti. <b>We specialize in sales, expert
+                        installation, and reliable repairs.</b> Committed to Health and Quality, Our Skilled Technicians
+                    ensure fast, friendly service for every home and office.
+                </p>
+            </div>
+            <div class="col-md-6 text-center mb-4">
+                <a href="https://share.google/xoYTH8uClcNk59Mv4" target="_blank">
+                    <img src="krishna sales and service logo.png" alt="Krishna Sales And Service Logo"
+                        class="img-fluid">
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Stats Section -->
+    <section class="stats-section text-center text-white">
+        <video autoplay muted loop playsinline id="stats-video">
+            <source src="waters.mp4" type="video/mp4">
+        </video>
+        <div class="container position-relative" style="z-index: 2;">
+            <div class="row g-3 justify-content-center">
+                <div class="col-md-4">
+                    <div class="stat-box">
+                        <div class="stat-number display-5 fw-bold"><span class="counter-value"
+                                data-target="27">0</span>+</div>
+                        <div class="stat-text">Years in Business</div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="stat-box">
+                        <div class="stat-number display-5 fw-bold"><span class="counter-value"
+                                data-target="750">0</span>+</div>
+                        <div class="stat-text">Happy Customers</div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="stat-box">
+                        <div class="stat-number display-5 fw-bold"><span class="counter-value"
+                                data-target="100">0</span>%</div>
+                        <div class="stat-text">Customer Satisfaction</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Partner Section -->
+    <section class="partner-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-7 mb-4 partner-content">
+                    <h2>Looking for a reliable & stable partner?</h2>
+                    <p>
+                        Partner with <strong>Krishna Sales & Service</strong>—where reliability meets innovation.
+                        With a legacy of trust, expert technical support, and a commitment to excellence,
+                        we deliver sustainable water solutions and home appliance services built for long-term success.
+                        Your vision, our expertise—let's shape a healthier future together.
+                    </p>
+                    <a href="contact.html" class="btn-partner">Contact Us</a>
+                </div>
+                <div class="col-md-5 text-center partner-logo-container mb-4">
+                    <img src="krishna sales and service logo.png" alt="Krishna Sales And Service Logo" class="img-fluid">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Back to Top Button -->
+    <button id="backToTop" title="Go to top">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 <a href="https://himanshudev.infy.uk/" style="color: black; text-decoration: none;">Himanshu
+                Parmar</a></p>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Preloader
+        var loader = document.getElementById("preloader");
+        window.addEventListener("load", function () {
+            loader.style.display = "none";
+        });
+
+        // Counter animation
+        const counters = document.querySelectorAll('.counter-value');
+        const speed = 200;
+        const startCounters = () => {
+            counters.forEach(counter => {
+                const updateCount = () => {
+                    const target = +counter.getAttribute('data-target');
+                    const count = +counter.innerText;
+                    const inc = target / speed;
+                    if (count < target) {
+                        counter.innerText = Math.ceil(count + inc);
+                        setTimeout(updateCount, 15);
+                    } else {
+                        counter.innerText = target;
+                    }
+                };
+                updateCount();
+            });
+        };
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    startCounters();
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+        observer.observe(document.querySelector('.stats-section'));
+
+        // Video slow motion
+        const video = document.getElementById("stats-video");
+        video.playbackRate = 0.5;
+
+        // Back to Top Button
+        const backToTop = document.getElementById("backToTop");
+
+        window.addEventListener("scroll", () => {
+            if (window.scrollY > 300) {
+                backToTop.style.display = "block";
+            } else {
+                backToTop.style.display = "none";
+            }
+        });
+
+        backToTop.addEventListener("click", () => {
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+        });
+    </script>
+</body>
+
+</html>
