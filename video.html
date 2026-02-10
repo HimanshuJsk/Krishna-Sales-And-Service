@@ -69,10 +69,10 @@
 
         /* Responsive Grid Layout */
         .video-grid {
-            display: grid;
+            display: flex;
             grid-template-columns: repeat(2, 1fr); /* 2 Columns on Desktop */
             gap: 25px;
-            justify-items: center;
+            justify-content: center;
         }
 
         .video-card {
@@ -173,15 +173,6 @@
         <h1>Video</h1>
         
         <div class="video-grid">
-            <div class="video-card">
-                <div class="inner">
-                    <video controls>
-                        <source src="kss.mp4" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
-                </div>
-            </div>
-
             <div class="video-card">
                 <div class="inner">
                     <video controls>
